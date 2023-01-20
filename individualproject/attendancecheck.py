@@ -1,10 +1,9 @@
 from datetime import datetime
-
-now = datetime.now()
 attendanceBook = {}
 # retrieve name
 name = input("Enter your name: (for exit, press q)")
 while (name != "q"):
+    now = datetime.now()
     currTime = now.strftime("%m/%d/%Y, %H:%M:%S")
     if name in attendanceBook:
         if (attendanceBook[name][-1][attendanceBook[name][-1].find("(")+1:attendanceBook[name][-1].find(")")] == "in"):
