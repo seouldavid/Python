@@ -1,20 +1,26 @@
 from datetime import datetime
-attendanceBook = {}
+attendance_book = {}
 # retrieve name
 name = input("Enter your name: (for exit, press q)")
 while (name != "q"):
     now = datetime.now()
     currTime = now.strftime("%m/%d/%Y, %H:%M:%S")
-    if name in attendanceBook:
-        if (attendanceBook[name][-1][attendanceBook[name][-1].find("(")+1:attendanceBook[name][-1].find(")")] == "in"):
-            attendanceBook[name].append(" " + currTime + "(out)")
+    if name in attendance_book:
+        if (attendance_book[name][-1][attendance_book[name][-1].find("(")+1:attendance_book[name][-1].find(")")] == "in"):
+            attendance_book[name].append(" " + currTime + "(out)")
         else:
-            attendanceBook[name].append(" " + currTime + "(in)")
+            attendance_book[name].append(" " + currTime + "(in)")
 
-        print(attendanceBook)
+        print(attendance_book)
     else:
-        attendanceBook[name] = []
-        attendanceBook[name].append(currTime + "(in)")
-        print(attendanceBook)
+        attendance_book[name] = []
+        attendance_book[name].append(currTime + "(in)")
+        print(attendance_book)
     name = input("Enter your name: (for exit, press q)")
 print("\nExit\n")
+
+#pop up menu 1.record in,out 2.ask personal info 3.register
+# record calls text from outside and personal info reads from file
+# register writes or updates file
+# when calling 1,2 if the name is not in file, error prompts then say the inptted
+# user is not registered then ask whether want to register. If yes go to the register menu
