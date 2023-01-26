@@ -26,6 +26,7 @@ print("\nExit\n")
 # user is not registered then ask whether want to register. If yes go to the register menu
 def register_name():
     name = input("input your name: ")
-    file_for_record = open("registered_names.txt","w")
+    file_for_record = open("registered_names.txt","a")
     file_for_record.write(name + "\n")
     file_for_record.close()
+    
