@@ -1,6 +1,6 @@
-hi =[[],1,2,3]
-bye = [4,5,6]
-
-hi.append(1) 
-
-print(hi)
+important = open("lessons/ff.txt","r")
+read = important.readlines()
+for word in read:
+    if word[-1] == "\n":
+        word = word[:-1]
+    print(word, end = " ")
