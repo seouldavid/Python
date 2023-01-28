@@ -26,21 +26,19 @@
 # user is not registered then ask whether want to register. If yes go to the register menu
 def register_name():
     name = input("input your name: ")
-    if (check_for_name(name)):
+    if (check_for_name(name,"individualproject/register.txt")):
         print("The name already registered!")
-        return
+        register_name()
     else:
         file_for_record = open("individualproject/register.txt","a")
         file_for_record.write(name + "\n")
         file_for_record.close()
+        print("recored successfully")
 
-def check_for_name(name):
-    name_file = open("individualproject/register.txt","r")
+def check_for_name(name,file_path):
+    name_file = open(file_path,"r")
     for line in name_file:
-        # print("print line: " + line)
-        # print("print line length: " + str(len(line)))
         if name == line.strip():
-            print("match")
             name_file.close()
             return True
     name_file.close()
