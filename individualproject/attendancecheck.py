@@ -34,6 +34,8 @@ def register_name():
         file_for_record.write(name + "\n")
         file_for_record.close()
         print("recored successfully")
+        opinion = input("do you want to continue adding? press exit if no")
+        
 
 def check_for_name(name,file_path):
     name_file = open(file_path,"r")
@@ -43,5 +45,4 @@ def check_for_name(name,file_path):
             return True
     name_file.close()
     return False
-register_name()
         
