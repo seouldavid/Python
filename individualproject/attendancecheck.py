@@ -33,5 +33,13 @@ def check_for_name(name,file_path):
             return True
     name_file.close()
     return False
-        
+def print_menu():
+    print(
+"""
+________________________
+
+Attendance Record System
+________________________
+""")
+print_menu()        
 register_name()
