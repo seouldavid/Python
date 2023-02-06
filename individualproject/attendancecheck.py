@@ -1,5 +1,5 @@
-# from datetime import datetime
-# attendance_book = {}
+from datetime import datetime
+attendance_book = {}
 # # retrieve name
 # name = input("Enter your name: (for exit, press q)")
 # while (name != "q"):
@@ -70,17 +70,29 @@ ________________________
 """)
     print("1) register")
     print("2) check-in")
-    print("3) register")
+    print("3) check-out")
+    print("4) quit")
     option = int(input("choose one from the menu"))
-    if (option <= 3 and option >= 1):
+    if (option <= 4 and option >= 1):
         return option 
     else:
+        print("wrong input")
         print_menu()
+def check_in():
+    name = input("Please enter your name")
+    if (check_for_name(name,"individualproject/register.txt")):
+        name_file = open("individualproject/register.txt","w")
+    else:
+        while()
+
+
 
 option = print_menu()
 match(option):
     case 1:
         register_name()
+    case 2:
+
 
 
 
