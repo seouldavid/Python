@@ -81,9 +81,9 @@ ________________________
 def check_in():
     name = input("Please enter your name")
     if (check_for_name(name,"individualproject/register.txt")):
-        name_file = open("individualproject/register.txt","w")
+        name_file = open("individualproject/register.txt","r")
     else:
-        while()
+        
 
 
 
