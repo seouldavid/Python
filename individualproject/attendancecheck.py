@@ -85,10 +85,10 @@ def check_in():
             name_file = open("individualproject/clients/"+ name +".txt","r")
         
         except FileNotFoundError:
-            name_file = open("individualproject/register.txt","w")
+            name_file = open("individualproject/clients/"+ name +".txt","w")
 
         else:
-            name_file = open("individualproject/register.txt","w")
+            name_file = open("individualproject/clients/"+ name +".txt","a")
     else:
         
 
