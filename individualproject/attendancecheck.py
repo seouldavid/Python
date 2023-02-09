@@ -79,6 +79,8 @@ ________________________
         print("wrong input")
         print_menu()
 def check_in():
+    now = datetime.now()
+    currTime = now.strftime("%m/%d/%Y, %H:%M:%S")
     name = input("Please enter your name")
     if (check_for_name(name,"individualproject/register.txt")):
         try:
@@ -86,9 +88,11 @@ def check_in():
         
         except FileNotFoundError:
             name_file = open("individualproject/clients/"+ name +".txt","w")
+            name_file.write( currTime + "(in)\n")
 
         else:
             name_file = open("individualproject/clients/"+ name +".txt","a")
+            name_file.write( currTime + "(in)\n")
     else:
         
 
