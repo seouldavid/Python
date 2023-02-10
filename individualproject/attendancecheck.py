@@ -31,8 +31,7 @@ def register_name():
         #wish to ask whether to continue adding or not
         opinion = input("press q for returning to the menu. otherwise, continue: ").strip()
         if opinion == "q":
-            print_menu()
-            return
+            menu_switch(print_menu())
         else:
             register_name()
     else:
@@ -72,7 +71,7 @@ ________________________
     print("2) check-in")
     print("3) check-out")
     print("4) quit")
-    option = int(input("choose one from the menu"))
+    option = int(input("choose one from the menu: "))
     if (option <= 4 and option >= 1):
         return option 
     else:
@@ -81,7 +80,7 @@ ________________________
 def check_in():
     now = datetime.now()
     currTime = now.strftime("%m/%d/%Y, %H:%M:%S")
-    name = input("Please enter your name")
+    name = input("Please enter your name: ")
     if (check_for_name(name,"individualproject/register.txt")):
         try:
             name_file = open("individualproject/clients/"+ name +".txt","r")
@@ -89,20 +88,28 @@ def check_in():
         except FileNotFoundError:
             name_file = open("individualproject/clients/"+ name +".txt","w")
             name_file.write( currTime + "(in)\n")
+            name_file.close()
+            print("new text created")
 
         else:
             name_file = open("individualproject/clients/"+ name +".txt","a")
             name_file.write( currTime + "(in)\n")
+            name_file.close()
+            print("text updated")
     else:
+        print("the input name not registered!")
+        print_menu()
         
-
+def menu_switch(option):
+    match(option):
+        case 1:
+            register_name()
+        case 2:
+            check_in()
 
 
 option = print_menu()
-match(option):
-    case 1:
-        register_name()
-    case 2:
+menu_switch(option)
 
 
 
