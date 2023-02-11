@@ -38,7 +38,7 @@ def register_name():
         file_for_record = open("individualproject/register.txt","a")
         file_for_record.write(name + "\n")
         file_for_record.close()
-        print("recored successfully")
+        print("recored successfully in the register.txt file")
         opinion = input("do you want to continue adding? press y for yes or exit for no: ").strip()
 
         while opinion != "y" and opinion != "exit":
@@ -95,7 +95,7 @@ def check_in():
             name_file = open("individualproject/clients/"+ name +".txt","a")
             name_file.write( currTime + "(in)\n")
             name_file.close()
-            print("text updated")
+            print("text updated in the client directory")
     else:
         print("the input name not registered!")
         print_menu()
