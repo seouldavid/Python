@@ -77,7 +77,7 @@ ________________________
     else:
         print("wrong input")
         print_menu()
-def check_in():
+def check(mode):
     now = datetime.now()
     currTime = now.strftime("%m/%d/%Y, %H:%M:%S")
     name = input("Please enter your name: ")
@@ -87,13 +87,13 @@ def check_in():
         
         except FileNotFoundError:
             name_file = open("individualproject/clients/"+ name +".txt","w")
-            name_file.write( currTime + "(in)\n")
+            name_file.write( currTime + "("+ mode +")\n")
             name_file.close()
             print("new text created")
 
         else:
             name_file = open("individualproject/clients/"+ name +".txt","a")
-            name_file.write( currTime + "(in)\n")
+            name_file.write( currTime + "(" + mode + ")\n")
             name_file.close()
             print("text updated in the client directory")
     else:
@@ -105,13 +105,10 @@ def menu_switch(option):
         case 1:
             register_name()
         case 2:
-            check_in()
+            check("in")
+        case 3:
+            check("out")
 
 
 option = print_menu()
 menu_switch(option)
-
-
-
-
-#register_name()
